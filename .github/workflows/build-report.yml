@@ -42,5 +42,6 @@ jobs:
         message: "[Automated] Update report"
         branch: "report"
         add: "public"
+        pull_strategy: "NO-PULL"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

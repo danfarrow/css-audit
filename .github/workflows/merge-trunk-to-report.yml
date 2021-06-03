@@ -1,0 +1,24 @@
+name: Merge trunk -> report
+on:
+  push:
+    branches:
+      # Run only on pushes to trunk
+      - trunk
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout CSS Audit
+      uses: actions/checkout@v2
+
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v5
+      with:
+        author_name: github-actions
+        author_email: 41898282+github-actions[bot]@users.noreply.github.com
+        message: "[Automated] Merge trunk"
+        branch: "report"
+        add: "public"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

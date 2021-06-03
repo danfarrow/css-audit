@@ -34,8 +34,7 @@ jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@trunk
-
+      - uses: actions/checkout@master
       - name: Merge trunk -> report
         uses: devmasx/merge-branch@v1.3.1
         with:
